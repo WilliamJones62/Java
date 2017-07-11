@@ -1,0 +1,26 @@
+    import java.util.*;
+
+public class AppleStocks {
+
+	public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();            
+        // Declare array a here
+        int[] stock_prices_yesterday = new int[n];
+        for(int i = 0 ; i < n; i++){
+            int val = sc.nextInt();
+            // Fill array a here
+            stock_prices_yesterday[i] = val;
+        }
+        scan.close();
+
+        max_profit = get_max_profit(stock_prices_yesterday);
+        
+
+
+	}
+	
+	void get_max_profit(stock_prices_yesterday) {
+		for 
+	}
+}
