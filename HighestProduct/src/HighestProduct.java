@@ -22,18 +22,76 @@ public class HighestProduct {
         sc.close();
         
     	int highest = 0;
-    	int product = 0;
-    	// No need to recalculate combinations of integers already calculated
-        for (int i = 0; i < (n - 2); i++){
-            for (int j = (i + 1); j < (n - 1); j++){
-                for (int k = (i + 2); k < n; k++){
-                	product = all[i] * all[j] * all[k];
-                	if (product > highest){
-                		highest = product;
-                	}
+    	int biggest = 0;
+    	int second_biggest = 0;
+    	int third_biggest = 0;
+    	int smallest = 0;
+    	int second_smallest = 0;
+
+        for (int i = 0; i < n; i++){
+        	if (all[i] > biggest){
+        		third_biggest = second_biggest;
+        		second_biggest = biggest;
+                biggest = all[i];
+            }
+        	else{
+            	if (all[i] > second_biggest){
+            		third_biggest = second_biggest;
+                    second_biggest = all[i];
                 }
+            	else{
+            		if (all[i] > third_biggest){
+                        third_biggest = all[i];
+            		}
+            		else{
+                		if (all[i] < smallest){
+                            second_smallest = smallest;
+                            smallest = all[i];
+                		}
+                		else{
+                    		if (all[i] < second_smallest){
+                                second_smallest = all[i];
+                    		}
+                		}
+                	}
+            	}
             }
         }
+    	// Two negative numbers can result in a positive product
+        if (smallest < 0 & second_smallest < 0){
+        	// Convert to positive values
+        	smallest *= -1;
+        	second_smallest *= -1;
+        	// If the converted smallest numbers are bigger than the biggest numbers replace them
+        	if (smallest > biggest){
+        		third_biggest = second_biggest;
+        		second_biggest = biggest;
+        		biggest = smallest;
+        	}
+        	else{
+        		if (smallest > second_biggest){
+        			third_biggest = second_biggest;
+        			second_biggest = smallest;
+        		}
+        		else{
+            		if (smallest > third_biggest){
+            			third_biggest = smallest;
+            		}
+            	}
+        	}
+
+        	if (second_smallest > second_biggest){
+        		third_biggest = second_biggest;
+        		second_biggest = smallest;
+        	}
+        	else{
+            	if (smallest > third_biggest){
+            			third_biggest = smallest;
+            	}
+        	}
+        }
+        
+        highest = biggest * second_biggest * third_biggest;
         System.out.println(highest);
 
     }
