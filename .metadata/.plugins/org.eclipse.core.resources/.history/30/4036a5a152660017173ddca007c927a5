@@ -15,6 +15,12 @@ public class HighestProduct {
         int[] all = new int[n];
         for (int i = 0; i < n; i++){
             int val = sc.nextInt();
+            // Element has to be greater than zero
+            if (val < 1){
+                System.out.println("Must be greater than zero");
+                sc.close();
+                return;
+            }
             // Fill array all here
             all[i] = val;
         }
