@@ -8,6 +8,7 @@ public class AppleStocks {
         // Array has to have at least 2 elements
         if (n < 2){
             System.out.println("Must be at least 2 elements in the array");
+            sc.close();
             return;
         }
         // Declare array a here
