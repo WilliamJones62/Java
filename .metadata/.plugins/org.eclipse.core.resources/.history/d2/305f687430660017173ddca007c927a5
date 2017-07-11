@@ -4,12 +4,7 @@ public class AppleStocks {
 
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();   
-        // Array has to have at least 2 elements
-        if (n < 2){
-            System.out.println("Must be at least 2 elements in the array");
-            return;
-        }
+        int n=sc.nextInt();            
         // Declare array a here
         int[] stock_prices_yesterday = new int[n];
         for(int i = 0 ; i < n; i++){
