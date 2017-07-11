@@ -15,7 +15,7 @@ public class AppleStocks {
         int[] stock_prices_yesterday = new int[n];
         for(int i = 0 ; i < n; i++){
             int val = sc.nextInt();
-            // Fill array a here
+            // Fill array stock_prices_yesterday here
             stock_prices_yesterday[i] = val;
         }
         sc.close();
