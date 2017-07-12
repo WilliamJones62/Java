@@ -41,6 +41,7 @@ public class PalindromeFinder {
             System.out.println("Palindrome");
         }
         else{
+            System.out.println("size = " + arrl.size());
         	System.out.println("Not a palindrome");
         }
     }

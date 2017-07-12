@@ -25,9 +25,9 @@ public class PalindromeFinder {
         String a;
         
         for (int i = 0; i < n; i++){
-    		a = Character.toString(all[i]);
-        	if (arrl.contains(a)){
+        	if (arrl.contains(all[i])){
         		// remove matching character from linked list
+        		a = Character.toString(all[i]);
         		q = arrl.remove(a);
         	}
         	else{
@@ -41,6 +41,7 @@ public class PalindromeFinder {
             System.out.println("Palindrome");
         }
         else{
+            System.out.println("size = " + arrl.size());
         	System.out.println("Not a palindrome");
         }
     }
